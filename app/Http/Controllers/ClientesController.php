@@ -54,7 +54,8 @@ class ClientesController extends Controller
      */
     public function show(clientes $clientes)
     {
-        //
+        $show = new clientes();
+        return view('consulta', ['consulta' => $show->all()]);
     }
 
     /**

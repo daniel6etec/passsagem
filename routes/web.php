@@ -33,4 +33,8 @@ Route::get('/registrar', function () { return view('registrar'); });
 
 Route::post('/registrar2', [ClientesController::class, 'store']);
 
+Route::get('/consultar', [ClientesController::class, 'show']);
+
+Route::get('/consulta', function () {return view('consulta'); });
+
 require __DIR__.'/auth.php';

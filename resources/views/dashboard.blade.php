@@ -17,7 +17,7 @@
                 </div>
                 <br>
                 <div class="p-6 text-gray-900">
-                    <a href="{{ url('/registrar') }}"> {{ __("Listar Cliente")}} </a>
+                    <a href="{{ url('/consultar') }}"> {{ __("Listar Cliente")}} </a>
                 </div>
             </div>
         </div>
