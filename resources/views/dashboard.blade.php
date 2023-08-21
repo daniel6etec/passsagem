@@ -11,14 +11,6 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
-                <br>
-                <div class="p-6 text-gray-900">
-                    <a href="{{ url('/registrar') }}"> {{ __("Registrar Cliente")}} </a>
-                </div>
-                <br>
-                <div class="p-6 text-gray-900">
-                    <a href="{{ url('/consultar') }}"> {{ __("Listar Cliente")}} </a>
-                </div>
             </div>
         </div>
     </div>

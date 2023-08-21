@@ -50,9 +50,9 @@ class ClientesController extends Controller
         }
 
     /**
-     * Display the specified resource.
+     * Display all resources.
      */
-    public function show(clientes $clientes)
+    public function show()
     {
         $show = new clientes();
         return view('consulta', ['consulta' => $show->all()]);
@@ -61,24 +61,35 @@ class ClientesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(clientes $clientes)
+    public function edit($Cep)
     {
-        //
+        $consulta = clientes::where('Cep', $Cep)->first();
+        return view('editar', ['consulta' => $consulta]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, clientes $clientes)
+    public function update(Request $request)
     {
-        //
+        $clientes = clientes::where('Cep', $request->Cep)->update([
+            'Nome' =>$request->nome,
+            'Endereco' =>$request->endereco,
+            'Bairro' =>$request->bairro,
+            'Cep' =>$request->cep,
+            'Cidade' =>$request->cidade,
+            'Estado' =>$request->estado,
+        ]);
+
+        return redirect('/consultar');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(clientes $clientes)
+    public function delete($Cep)
     {
-        //
+        clientes::where('Cep', $Cep)->delete();
+        return redirect('/consultar');
     }
 }

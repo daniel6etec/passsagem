@@ -1,5 +1,13 @@
 <head>
 <title>Registrar</title>
+
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js',
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.js'
+    ])
+
 </head>
 
 <x-app-layout>
@@ -54,17 +62,33 @@
         <!-- Estado -->
         <div class="mt-4">
             <x-input-label for="Estado" :value="__('Estado')" />
-            <x-text-input id="estado" class="block mt-1 w-full" type="text" name="estado" :value="old('estado')" required autocomplete="estado" />
+            <select class="block mt-1 w-full" name="estado" aria-label="Default select example">
+                <option disabled selected>Selecione um estado</option>
+                <option value="SP">SP</option>
+                <option value="MG">MG</option>
+                <option value="BA">BA</option>
+                <option value="PI">PI</option>
+                <option value="TO">TO</option>
+                <option value="MT">MT</option>
+                <option value="PR">PR</option>
+                <option value="GO">GO</option>
+                <option value="SC">SC</option>
+                <option value="CE">CE</option>
+                <option value="RS">RS</option>
+                <option value="RJ">RJ</option>
+                <option value="AM">AM</option>
+                <option value="RN">RN</option>
+                <option value="AL">AL</option>
+                <option value="AC">AC</option>
+                <option value="RO">RO</option>
+                <option value="SE">SE</option>
+            </select>
             <x-input-error :messages="$errors->get('estado')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Já está está registrado?') }}
-            </a>
-
             <x-primary-button class="ml-4">
-                {{ __('Registrar-se') }}
+                {{ __('Registrar') }}
             </x-primary-button>
         </div>
     </form>

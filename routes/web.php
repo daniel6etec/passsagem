@@ -29,12 +29,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/registrar', function () { return view('registrar'); });
+Route::get('/registrar', function () { return view('registrar'); })->name('registrar');;
 
 Route::post('/registrar2', [ClientesController::class, 'store']);
 
-Route::get('/consultar', [ClientesController::class, 'show']);
+Route::get('/consultar', [ClientesController::class, 'show'])->name('consultar');
 
 Route::get('/consulta', function () {return view('consulta'); });
+
+Route::get('/editar/{Cep}', [ClientesController::class, 'edit']);
+
+Route::put('/atualizar/{Cep}', [ClientesController::class, 'update']);
+
+Route::get('/excluir/{Cep}', [ClientesController::class, 'delete']);
 
 require __DIR__.'/auth.php';
