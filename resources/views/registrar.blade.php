@@ -48,7 +48,7 @@
         <!-- CEP -->
         <div class="mt-4">
             <x-input-label for="CEP" :value="__('CEP')" />
-            <x-text-input id="cep" class="block mt-1 w-full" type="number" name="cep" :value="old('cep')" required autocomplete="cep" />
+            <x-text-input id="cep" class="block mt-1 w-full" type="text" name="cep" :value="old('cep')" required autocomplete="cep" />
             <x-input-error :messages="$errors->get('cep')" class="mt-2" />
         </div>
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('Nome');
             $table->string('Endereco');
             $table->string('Bairro');
-            $table->integer('Cep');
+            $table->string('Cep');
             $table->string('Cidade');
             $table->string('Estado');
             $table->timestamps();
